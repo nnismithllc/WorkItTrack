@@ -1,8 +1,9 @@
 let mongoose = require("mongoose");
-let db = require("../models");
+let db = require("../public");
+let dbA = require("../models");
 let express = require("express");
 let morgan = require("morgan");
-let uri ='mongodb://localhost:27017/?readPreference=primary&WorkItTrack=MongoDB%20Compass&ssl=false'
+let uri ='mongodb://localhost:27017/?readPreference=primary&workout=MongoDB%20Compass&ssl=false'
 
 mongoose.connect("mongodb://localhost/workout", {
   useNewUrlParser: true,

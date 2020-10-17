@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const databaseUrl = "WorkItTrack";
+const databaseUrl = "workout";
 const collections = ["exercises"];
 
 const db = mongojs(databaseUrl, collections);
