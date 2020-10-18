@@ -14,13 +14,22 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const databaseUrl = "workout";
-const collections = ["exercises"];
-
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/workittrack',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 const db = mongojs(databaseUrl, collections);
 
+// morgan('combined', {
+//     skip: function (req, res) { return res.statusCode < 400 }
+//   })
 
-db.on("error", error => {
+db.on('error', function() {
   console.log("Database Error:", error);
 });
 
@@ -112,6 +121,8 @@ app.delete("/clearall", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("App running on port 3000!");
+app.use(htmlroutes);
+app.use(apiroutes);
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}!`);
 });
