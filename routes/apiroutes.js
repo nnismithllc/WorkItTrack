@@ -1,8 +1,8 @@
-const Workout = require("../models/workout.js")
+const Workout = require("../models/workit.js")
+const router = require("express").Router()
+// 
 
-module.exports = function (app) {
-
-    app.get("/api/workouts", function (req, res) {
+    router.get("/api/workouts", function (req, res) {
         Workout.find()
             .then(data => {
                 res.json(data)
@@ -12,7 +12,7 @@ module.exports = function (app) {
             })
     });
 
-    app.post("/api/workouts", function (req, res) {
+    router.post("/api/workouts", function (req, res) {
         Workout.create({})
             .then(data => res.json(data))
             .catch(err => {
@@ -21,18 +21,19 @@ module.exports = function (app) {
             })
     });
 
-    app.get("/find/:id", (req, res) => {
-        db.exercises.findOne(
+   
+
+      router.put("/api/workouts/:id", (req, res) => {
+        Workout.findByIdAndUpdate(
+          req.params.id, 
           {
-            _id: mongojs.ObjectId(req.params.id)
+           $push:{exercises:req.body}
           },
-          (error, data) => {
-            if (error) {
-              res.send(error);
-            } else {
-              res.send(data);
-            }
-          }
-        );
+          
+        ) .then(data => res.json(data))
+        .catch(err => {
+            console.log("err", err)
+            res.json(err)
+        })
       });  
-}
+module.exports = router
