@@ -1,4 +1,4 @@
-# WorkItOut Fitness Tracker 
+# WorkIt Fitness Tracker 
 
 ## Description 
 This app was created for the women who have a strong desire to keep track of their exercise routines. It takes count of strength, cardio, and time of every exercise a user input. The data take track of new works and existing ones as a continous routine. The app is user friendly  with 2 navbar buttons, 2 directive bottom buttons, and locally stored on a database for future use. 
