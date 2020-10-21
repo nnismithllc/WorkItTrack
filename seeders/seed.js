@@ -1,11 +1,14 @@
+// Mongoose Variables
 let mongoose = require("mongoose");
 let db = require("../models");
 
+// Mongoose Connector to the Database
 mongoose.connect("mongodb://localhost/workittrack", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
 
+// Seed Database Information
 let workoutSeed = [
   {
     day: new Date().setDate(new Date().getDate()-10),
@@ -136,6 +139,7 @@ let workoutSeed = [
 
 ];
 
+// Seed Delete Function w/ Errors
 db.Workout.deleteMany({})
   .then(() => db.Workout.collection.insertMany(workoutSeed))
   .then(data => {

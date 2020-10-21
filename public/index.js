@@ -1,3 +1,4 @@
+// Index Init Function 
 init();
 
 async function init() {
