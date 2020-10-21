@@ -10,6 +10,11 @@ html,
 body,
 .wrapper {
   height: 100%;
+  background: url(images/workout.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
@@ -31,13 +36,16 @@ a:active,
 a:visited {
   text-decoration: none;
   color: inherit;
+ 
 }
 
 header {
-  height: 150px;
+  height: 200px;
   padding-top: 80px;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 5rem;
+  color: rgb(251, 45, 113);
+  font-weight: bolder
 }
 
 header h1 {
@@ -359,8 +367,12 @@ form > button {
 }
 
 .prev-workout h3 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   width: 100%;
+  background-image: url('gloves.jpg');
+  color: rgb(73, 72, 72);
+  font-family: fantasy;
+ 
 }
 
 .prev-workout p {
@@ -368,9 +380,6 @@ form > button {
   margin-bottom: 5px;
 }
 
-/* .workout .card {
-  width: 350px;
-} */
 
 .prev-workout button {
   margin: 10px;
@@ -434,4 +443,19 @@ form > button {
     opacity: 0;
     right: -320px;
   }
+}
+
+#buttons:hover { 
+  background-image: url( 
+images/gloves.jpg); 
+  background-size: cover; 
+} 
+
+.workit {
+  color: rgb(170, 255, 1);
+  font-weight: bolder;
+}
+.workito {
+  color: rgb(186, 255, 47);
+  font-weight: bold;
 }
